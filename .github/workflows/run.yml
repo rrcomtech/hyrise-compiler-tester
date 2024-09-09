@@ -11,6 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Update Nix Channel
+        run: |
+          nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+          nix-channel --update
       - name: Setup Result Cache
         run: |
           touch results.md
