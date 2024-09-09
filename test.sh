@@ -13,9 +13,6 @@ release_compilation_directory="cmake-release-$nix_package"
 nix-shell -p git --run "git clone $hyrise_url --recursive --depth 1 --branch master $temp_dir"
 cd "$temp_dir"
 
-pwd
-ls
-
 mkdir $debug_compilation_directory $release_compilation_directory
 
 echo
