@@ -16,41 +16,41 @@ jobs:
           touch results.md
           echo "|Nix Package Name|Debug Build Result|Release Build Result|" > results.md
       - name: gcc 6
-        run: ./test.sh gcc6 gcc g++
+        run: bash ./test.sh gcc6 gcc g++
       - name: gcc 7
-        run: ./test.sh gcc7 gcc g++
+        run: bash ./test.sh gcc7 gcc g++
       - name: gcc 8
-        run: ./test.sh gcc8 gcc g++
+        run: bash ./test.sh gcc8 gcc g++
       - name: gcc 9
-        run: ./test.sh gcc9 gcc g++
+        run: bash ./test.sh gcc9 gcc g++
       - name: gcc 10
-        run: ./test.sh gcc10 gcc g++
-      - name: gcc 11
-        run: ./test.sh gcc11 gcc g++
+        run: bash ./test.sh gcc10 gcc g++
+      - name:  gcc 11
+        run: bash ./test.sh gcc11 gcc g++
       - name: gcc 12
-        run: ./test.sh gcc12 gcc g++
+        run: bash ./test.sh gcc12 gcc g++
       - name: gcc 13
-        run: ./test.sh gcc13 gcc g++
+        run: bash ./test.sh gcc13 gcc g++
       - name: gcc 14
-        run: ./test.sh gcc14 gcc g++
+        run: bash ./test.sh gcc14 gcc g++
       - name: clang 12
-        run: ./test.sh clang_12 clang clang++
+        run: bash ./test.sh clang_12 clang clang++
       - name: clang 13
-        run: ./test.sh clang_13 clang clang++
+        run: bash ./test.sh clang_13 clang clang++
       - name: clang 14
-        run: ./test.sh clang_14 clang clang++
+        run: bash ./test.sh clang_14 clang clang++
       - name: clang 15
-        run: ./test.sh clang_15 clang clang++
+        run: bash ./test.sh clang_15 clang clang++
       - name: clang 16
-        run: ./test.sh clang_16 clang clang++
+        run: bash ./test.sh clang_16 clang clang++
       - name: clang 18
-        run: ./test.sh clang_18 clang clang++
+        run: bash ./test.sh clang_18 clang clang++
       - name: Release Results
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           automatic_release_tag: "latest"
           prerelease: true
-          title: "Release Results as of ${{ steps.date.outputs.date }}"
+          title: "Latest Release Results"
           files: results.md
 
